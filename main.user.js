@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         lifeRestart
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
-// @match        http://liferestart.syaro.io/view/index.html
+// @version      0.2
+// @description  人生重开模拟器脚本，增加自选天赋控件
+// @author       D780
+// @match        http://liferestart.syaro.io/view/index.html*
 // @icon         https://www.google.com/s2/favicons?domain=syaro.io
 // @grant        none
 // ==/UserScript==
@@ -69,13 +69,19 @@
       return;
     }
 
-    const panelEle = $(`<div id="extra-panel" style="top: 3.5rem; width: calc(25% - 2rem); left: 0.5rem; position: fixed;">
+    const theme = window.localStorage.getItem('theme') || 'dark';
+    let color = '#EEEEEE';
+    if(theme ==='light'){
+      color = '#000000';
+    }
+
+    const panelEle = $(`<div id="extra-panel" style="top: 3.5rem; width: calc(25% - 2rem); left: 0.5rem; position: fixed; color: ${color}">
     <div style="">自选天赋</div>
     <div style="margin-top:0.6rem; ">
       <input id="ep-search" type="text" placeHolder="搜索天赋" style="
         outline-style: none;
         background-color: #eee;
-        text-indent:3rem;
+        text-align: center;
         text-overflow:ellipsis;
         width: 100%;
         font-size: 1rem;
@@ -84,7 +90,10 @@
         color: #212529;
         background-color: #fff;
         background-clip: padding-box;
-        border: 1px solid #ced4da;">
+        border: 1px solid #ced4da;
+        border-radius: 0.2rem;
+        padding: 0;
+        ">
       <ul id="ep-search-result" style="list-style-type: none; padding-inline-start: 0; margin-block-start: 0; position: absolute; width: 100%;"></ul>
     </div>
     <div style="margin-top:0.6rem; ">最近天赋</div>
@@ -119,6 +128,7 @@
         const tobj = talentMap[tid];
         if (tobj) {
           const li = createTalentSMItem(tobj);
+          li.css('margin','0.1rem auto');
           li.on('click', () => {
             addTalent(tobj.id);
           });
@@ -129,7 +139,7 @@
   }
 
   function createTalentSMItem({ grade, name, description }) {
-    return $(`<li class="grade${grade}b" title="${description}">${name}</li>`);
+    return $(`<li class="grade${grade}b" title="${description}" style="cursor: pointer;text-align: center;border-radius: 0.2rem;">${name}</li>`);
   }
 
   setInterval(() => inject(), 500);
