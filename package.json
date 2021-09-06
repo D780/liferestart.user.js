@@ -1,0 +1,22 @@
+{
+  "name": "mental-model-amplification-core",
+  "version": "1.12.1",
+  "description": "mental-model 增幅核心",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "mmac": "./bin/mmac.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+http://opensource.oa.com/dingzhipeng/mental-model-amplification-core"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-egg": "^7.5.1"
+  }
+}

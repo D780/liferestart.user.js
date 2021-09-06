@@ -1,0 +1,8 @@
+logs/
+node_modules/
+coverage/
+.idea/
+run/
+test/
+tags/
+**/test*.js
