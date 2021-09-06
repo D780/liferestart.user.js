@@ -1,17 +1,10 @@
 {
-  "name": "mental-model-amplification-core",
-  "version": "1.12.1",
-  "description": "mental-model 增幅核心",
-  "main": "index.js",
+  "name": "liferestart.user.js",
+  "version": "0.3",
+  "description": "人生重开模拟器脚本",
+  "main": "main.user.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "mmac": "./bin/mmac.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+http://opensource.oa.com/dingzhipeng/mental-model-amplification-core"
   },
   "author": "",
   "license": "ISC",

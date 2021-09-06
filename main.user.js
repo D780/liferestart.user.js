@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         lifeRestart
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  人生重开模拟器脚本，增加自选天赋控件
 // @author       D780
 // @match        http://liferestart.syaro.io/view/index.html*
@@ -100,6 +100,8 @@
     <ul id="ep-last-talents" style="list-style-type: none; padding-inline-start: 0;"></ul></div>`);
 
     $('#main').append(panelEle);
+
+      $('#next').on('click', () => panelEle.remove())
 
     const searchEle = $('#ep-search');
     const searchResultEle = $('#ep-search-result');
