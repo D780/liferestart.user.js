@@ -132,7 +132,6 @@
     return $(`<li class="grade${grade}b" title="${description}">${name}</li>`);
   }
 
-
   setInterval(() => inject(), 500);
 
   window.addTalent = addTalent;
