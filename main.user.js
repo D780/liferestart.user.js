@@ -71,7 +71,7 @@
 
     const theme = window.localStorage.getItem('theme') || 'dark';
     let color = '#EEEEEE';
-    if(theme ==='light'){
+    if (theme === 'light') {
       color = '#000000';
     }
 
@@ -101,7 +101,7 @@
 
     $('#main').append(panelEle);
 
-      $('#next').on('click', () => panelEle.remove())
+    $('#next').on('click', () => panelEle.remove());
 
     const searchEle = $('#ep-search');
     const searchResultEle = $('#ep-search-result');
@@ -130,7 +130,7 @@
         const tobj = talentMap[tid];
         if (tobj) {
           const li = createTalentSMItem(tobj);
-          li.css('margin','0.1rem auto');
+          li.css('margin', '0.1rem auto');
           li.on('click', () => {
             addTalent(tobj.id);
           });
